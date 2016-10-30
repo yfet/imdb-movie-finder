@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'assets/css/bootstrap.min.css';
+@import 'assets/css/font-awesome.min.css';
+body {
+    margin-top: 65px;
+}
+
+.movie-poster {
+    min-height: 300px !important;
+    margin: 0;
+}
+
+.blank-poster {
+    height: 280px;
+    text-align: center;
+    line-height: 280px;
+    margin: 0;
+    background-color: #e2e2e2;
+    border: 5px solid #fff;
+}

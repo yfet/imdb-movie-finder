@@ -1,0 +1,12 @@
+<div class="form-finder row">
+    <form class="col-sm-12" (submit)="onSubmit(title)">
+        <h3>Search for Movies</h3>
+        <div class="form-group">
+            <input class="form-control" placeholder="enter movie title here..." #title>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit">Search</button>
+        </div>
+    </form>
+</div>
+<movie-list [movies]="movies"></movie-list>
