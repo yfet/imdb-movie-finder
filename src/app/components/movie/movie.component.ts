@@ -12,25 +12,7 @@ export class MovieComponent {
     @Input()
     movie: Movie;
 
-    detailsFetched: boolean = false;
-
     constructor(private movieService: MovieService) {
-        if (this.movie) {
-            this.fetchDetails();
-        }
-    }
-
-    fetchDetails(): void {
-        this.movieService
-            .getOneMovie(this.movie.imdbID)
-            .subscribe(
-                data => console.log(data),
-                error => alert(error),
-                () =>  {
-                    this.detailsFetched = true;
-                }
-            );
         
     }
-
 }

@@ -1,12 +1,32 @@
 <div class="form-finder row">
     <form class="col-sm-12" (submit)="onSubmit(title)">
-        <h3>Search for Movies</h3>
+        <h3>Enter Movie Title to Search</h3>
         <div class="form-group">
-            <input class="form-control" placeholder="enter movie title here..." #title>
+            <input class="form-control input-lg" placeholder="movie title..." #title>
         </div>
+        <ajax-loader *ngIf="beginFetching"></ajax-loader>
         <div class="form-group">
-            <button class="btn btn-primary btn-block" type="submit">Search</button>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Search</button>
         </div>
     </form>
 </div>
-<movie-list [movies]="movies"></movie-list>
+<movie-list [notFound]="notFound()" [totalResults]="totalResults" [movies]="movies"></movie-list>
+<nav aria-label="Page navigation">
+    <ul *ngIf="totalResults > 10" class="pagination">
+        <li>
+            <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+            <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>

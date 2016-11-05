@@ -19,3 +19,7 @@ body {
     background-color: #e2e2e2;
     border: 5px solid #fff;
 }
+
+.ajax-loader {
+    padding: 0 0 20px 0;
+}

@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-sm-12">
-        <h4 *ngIf="hasMovies()">Results: {{ moviesCount() }} movie(s) found</h4>
+        <h4 *ngIf="notFound" class="text-center">No movie found !</h4>
+        <h4 *ngIf="hasMovies()" class="text-center">Results: {{ moviesCount() }} movie(s) found</h4>
         <movie *ngFor="let the_movie of movies" [movie]="the_movie"></movie>
     </div>
-</div>
+</div>  

@@ -10,23 +10,22 @@ import Movie from '../model/movie.model';
 export class MovieListComponent {
     @Input()
     movies: Array<Movie>;
+    @Input()
+    totalResults: number;
+    @Input()
+    notFound: boolean;
 
     constructor() {
         this.movies = [];
+        this.totalResults = 0;
     }
 
     hasMovies(): boolean {
-        if (this.movies) {
-            return (this.movies.length > 0);
-        }
-        return false;
+        return (this.totalResults > 0);
     }
 
     moviesCount(): number {
-        if (this.hasMovies()) {
-            return (this.movies.length);
-        }
-        return 0;
+        return this.totalResults;
     }
     
 }
